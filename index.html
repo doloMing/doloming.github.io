@@ -8,71 +8,64 @@
 </head>
 <body>
     <header>
-        <h1>您的姓名</h1>
-        <p>求职意向: 您的目标职位</p>
+        <nav>
+            <ul>
+                <li><a href="#about">关于我</a></li>
+                <li><a href="#education">教育经历</a></li>
+                <li><a href="#projects">项目经验</a></li>
+                <li><a href="#experience">工作经历</a></li>
+                <li><a href="#skills">技能</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="#about">关于我</a></li>
-            <li><a href="#education">教育经历</a></li>
-            <li><a href="#projects">项目经验</a></li>
-            <li><a href="#experience">工作经历</a></li>
-            <li><a href="#skills">技能</a></li>
-        </ul>
-    </nav>
-
     <main>
+        <section id="hero">
+            <h1>您的姓名</h1>
+            <p>求职意向: 您的目标职位</p>
+        </section>
+
         <section id="about">
             <h2>关于我</h2>
-            <p>在这里简要介绍您自己,包括您的职业目标和兴趣。</p>
+            <p>在这里简要介绍您自己,包括您的职业目标和兴趣。突出您的独特之处和价值主张。</p>
         </section>
 
         <section id="education">
             <h2>教育经历</h2>
-            <ul>
-                <li>
-                    <h3>您的学位 - 专业名称</h3>
-                    <p>学校名称, 毕业年份</p>
-                    <p>GPA: 您的GPA (如果适用)</p>
-                    <p>相关课程: 课程1, 课程2, 课程3</p>
-                </li>
-                <!-- 如果有多个学历,可以添加更多<li>元素 -->
-            </ul>
+            <div class="card">
+                <h3>您的学位 - 专业名称</h3>
+                <p>学校名称, 毕业年份</p>
+                <p>GPA: 您的GPA (如果适用)</p>
+                <p>相关课程: 课程1, 课程2, 课程3</p>
+            </div>
         </section>
 
         <section id="projects">
             <h2>项目经验</h2>
-            <ul>
-                <li>
-                    <h3>项目名称</h3>
-                    <p>项目描述</p>
-                    <p><strong>我的贡献:</strong></p>
-                    <ul>
-                        <li>具体贡献1</li>
-                        <li>具体贡献2</li>
-                        <li>具体贡献3</li>
-                    </ul>
-                    <p><strong>使用的技术:</strong> 技术1, 技术2, 技术3</p>
-                </li>
-                <!-- 添加更多项目 -->
-            </ul>
+            <div class="card">
+                <h3>项目名称</h3>
+                <p>项目描述</p>
+                <h4>我的贡献:</h4>
+                <ul>
+                    <li>具体贡献1</li>
+                    <li>具体贡献2</li>
+                    <li>具体贡献3</li>
+                </ul>
+                <p><strong>使用的技术:</strong> 技术1, 技术2, 技术3</p>
+            </div>
         </section>
 
         <section id="experience">
-            <h2>工作/实习经历</h2>
-            <ul>
-                <li>
-                    <h3>职位名称</h3>
-                    <p>公司名称, 工作时间段</p>
-                    <ul>
-                        <li>工作职责或成就1</li>
-                        <li>工作职责或成就2</li>
-                        <li>工作职责或成就3</li>
-                    </ul>
-                </li>
-                <!-- 添加更多工作经历 -->
-            </ul>
+            <h2>工作经历</h2>
+            <div class="card">
+                <h3>职位名称</h3>
+                <p>公司名称, 工作时间段</p>
+                <ul>
+                    <li>工作职责或成就1</li>
+                    <li>工作职责或成就2</li>
+                    <li>工作职责或成就3</li>
+                </ul>
+            </div>
         </section>
 
         <section id="skills">
@@ -83,7 +76,6 @@
                     <ul>
                         <li>语言1 - 熟练程度</li>
                         <li>语言2 - 熟练程度</li>
-                        <!-- 添加更多语言 -->
                     </ul>
                 </div>
                 <div class="skill-category">
@@ -92,7 +84,6 @@
                         <li>技能1</li>
                         <li>技能2</li>
                         <li>技能3</li>
-                        <!-- 添加更多技能 -->
                     </ul>
                 </div>
             </div>
@@ -101,12 +92,17 @@
 
     <footer>
         <p>© 2023 您的姓名. 保留所有权利。</p>
-        <p>
-            联系方式: 
-            <a href="mailto:your.email@example.com">your.email@example.com</a> | 
-            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> | 
-            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-        </p>
+        <div class="social-links">
+            <a href="mailto:your.email@example.com" aria-label="Email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+        </div>
     </footer>
 </body>
 </html>
