@@ -1,41 +1,37 @@
-'use client'
-
-import React, { useState, useEffect } from 'react';
-
 const publicationsData = [
-  {
-    "title": "Renormalization group theory for percolation in time-varying networks",
-    "authors": "Yang Tian, et al.",
-    "venue": "Physical Review E",
-    "year": "2023",
-    "citations": "5",
-    "link": "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.107.024303"
-  },
-  {
-    "title": "Percolation transition in dynamical networks: The role of temporal correlations",
-    "authors": "Yang Tian, et al.",
-    "venue": "Physical Review E",
-    "year": "2022",
-    "citations": "10",
-    "link": "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.106.014307"
-  },
-  {
-    "title": "Percolation on temporal networks",
-    "authors": "Yang Tian, et al.",
-    "venue": "Physical Review E",
-    "year": "2021",
-    "citations": "15",
-    "link": "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.104.024304"
-  }
+    {
+        "title": "Renormalization group theory for percolation in time-varying networks",
+        "authors": "Yang Tian, et al.",
+        "venue": "Physical Review E",
+        "year": "2023",
+        "citations": "5",
+        "link": "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.107.024303"
+    },
+    {
+        "title": "Percolation transition in dynamical networks: The role of temporal correlations",
+        "authors": "Yang Tian, et al.",
+        "venue": "Physical Review E",
+        "year": "2022",
+        "citations": "10",
+        "link": "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.106.014307"
+    },
+    {
+        "title": "Percolation on temporal networks",
+        "authors": "Yang Tian, et al.",
+        "venue": "Physical Review E",
+        "year": "2021",
+        "citations": "15",
+        "link": "https://journals.aps.org/pre/abstract/10.1103/PhysRevE.104.024304"
+    }
 ];
 
-export default function Publications() {
-    const [publications, setPublications] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [sortBy, setSortBy] = useState('year');
-    const [sortOrder, setSortOrder] = useState('desc');
+function Publications() {
+    const [publications, setPublications] = React.useState([]);
+    const [loading, setLoading] = React.useState(true);
+    const [sortBy, setSortBy] = React.useState('year');
+    const [sortOrder, setSortOrder] = React.useState('desc');
 
-    useEffect(() => {
+    React.useEffect(() => {
         // Simulate an async operation
         setTimeout(() => {
             setPublications(publicationsData);
@@ -43,14 +39,16 @@ export default function Publications() {
         }, 500);
     }, []);
 
-    const sortedPublications = [...publications].sort((a, b) => {
-        if (sortBy === 'year') {
-            return sortOrder === 'asc' ? a.year - b.year : b.year - a.year;
-        } else if (sortBy === 'citations') {
-            return sortOrder === 'asc' ? a.citations - b.citations : b.citations - a.citations;
-        }
-        return 0;
-    });
+    const sortedPublications = React.useMemo(() => {
+        return [...publications].sort((a, b) => {
+            if (sortBy === 'year') {
+                return sortOrder === 'asc' ? a.year - b.year : b.year - a.year;
+            } else if (sortBy === 'citations') {
+                return sortOrder === 'asc' ? a.citations - b.citations : b.citations - a.citations;
+            }
+            return 0;
+        });
+    }, [publications, sortBy, sortOrder]);
 
     const handleSort = (criteria) => {
         if (sortBy === criteria) {
@@ -101,4 +99,7 @@ export default function Publications() {
         </div>
     );
 }
+
+// Make sure to export the component as default
+export default Publications;
 
