@@ -1,0 +1,70 @@
+# 网站设置
+title: 您的姓名
+description: 个人主页 & 在线简历
+url: # 填入您的GitHub Pages URL
+baseurl: ""
+
+# 主题设置
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "air" # 可选: air, contrast, dark, dirt, mint, sunrise
+
+# 网站作者
+author:
+  name: "您的姓名"
+  avatar: "/assets/images/bio-photo.jpg" # 添加您的照片
+  bio: "简短的自我介绍"
+  location: "您的位置"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:your.email@example.com"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/yourusername"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/yourprofile"
+
+# 网站页脚链接
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/yourusername"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/yourprofile"
+
+# 默认设置
+defaults:
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+# 包含的文件/文件夹
+include:
+  - _pages
+
+# 排除的文件/文件夹
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# 插件
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+
