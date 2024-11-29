@@ -1,6 +1,6 @@
 # 网站设置
-title: 您的姓名
-description: 个人主页 & 在线简历
+title: Yang Tian
+description: Persoanl page
 url: # 填入您的GitHub Pages URL
 baseurl: ""
 
@@ -10,14 +10,14 @@ minimal_mistakes_skin: "air" # 可选: air, contrast, dark, dirt, mint, sunrise
 
 # 网站作者
 author:
-  name: "您的姓名"
+  name: "Yang Tian"
   avatar: "/assets/images/bio-photo.jpg" # 添加您的照片
-  bio: "简短的自我介绍"
-  location: "您的位置"
+  bio: "I am a researcher in the fields of statistical physics, machine learning, and computational science. My work spans these seemingly distinct areas due to my focus on understanding the physical principles governing complex and heterogeneous systems, and exploring how to control and optimize these systems. My research centers on topics such as renormalization group theory, randomized algorithms, operator theory, percolation, and neural networks, with a particular emphasis on identifying their applications across various scientific and technological challenges."
+  location: "China"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:your.email@example.com"
+      url: "mailto:tyanyang04@gmail.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/yourusername"
@@ -44,10 +44,6 @@ defaults:
     values:
       layout: single
       author_profile: true
-
-# 包含的文件/文件夹
-include:
-  - _pages
 
 # 排除的文件/文件夹
 exclude:
