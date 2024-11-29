@@ -262,3 +262,15 @@ footer {
   }
 }
 
+/* Social Links Styles */
+.social-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-right: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 0.8;
+}
+
