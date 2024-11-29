@@ -1,297 +1,38 @@
-/* Basic styles */
-:root {
-  --primary-color: #0B3D91;
-  --secondary-color: #A9A9A9;
-  --accent-color: #4682B4;
-  --background-color: #000000;
-  --text-color: #FFFFFF;
-  --card-background: rgba(255, 255, 255, 0.1);
-  --border-color: rgba(255, 255, 255, 0.2);
+\`\`\`css
+/* Existing styles here */
+
+/* About section styles */
+.about-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
 }
 
-body {
-  font-family: 'Roboto', Arial, sans-serif;
-  line-height: 1.6;
-  color: var(--text-color);
-  background-color: var(--background-color);
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+.profile-photo {
+    flex-shrink: 0;
 }
 
-/* Star background */
-.stars, .twinkling {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
+.rounded-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
 }
 
-.stars {
-  background: #000 url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png') repeat top center;
-  z-index: -2;
+.about-text {
+    flex-grow: 1;
 }
 
-.twinkling {
-  background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png') repeat top center;
-  z-index: -1;
-  animation: move-twink-back 200s linear infinite;
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-photo {
+        margin-bottom: 20px;
+    }
 }
-
-@keyframes move-twink-back {
-  from {background-position: 0 0;}
-  to {background-position: -10000px 5000px;}
-}
-
-/* Navigation styles */
-header {
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-}
-
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
-
-nav ul li {
-  margin: 0 15px;
-}
-
-nav ul li a {
-  color: var(--text-color);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-nav ul li a:hover {
-  color: var(--accent-color);
-}
-
-/* Main content styles */
-main {
-  max-width: 800px;
-  margin: 80px auto 0;
-  padding: 20px;
-  position: relative;
-  z-index: 1;
-}
-
-section {
-  margin-bottom: 40px;
-  position: relative;
-}
-
-h1, h2, h3 {
-  color: var(--text-color);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-h2 {
-  font-size: 2em;
-  border-bottom: 2px solid var(--secondary-color);
-  padding-bottom: 10px;
-  margin-top: 40px;
-  text-transform: uppercase;
-}
-
-/* Card styles */
-.card {
-  background-color: var(--card-background);
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid var(--border-color);
-  backdrop-filter: blur(5px);
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-/* Footer styles */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.8);
-  border-top: 1px solid var(--border-color);
-  position: relative;
-  z-index: 1;
-}
-
-/* Publications styles */
-#publications {
-  padding-top: 80px;
-}
-
-.publication {
-  margin-bottom: 30px;
-  position: relative;
-}
-
-.publication h3 {
-  font-size: 1.4em;
-  margin-bottom: 15px;
-  color: var(--text-color);
-}
-
-.publication .authors {
-  color: var(--secondary-color);
-  margin-bottom: 10px;
-}
-
-.publication .venue-year {
-  margin-bottom: 10px;
-}
-
-.publication .venue {
-  font-style: italic;
-}
-
-.publication .citations {
-  color: var(--accent-color);
-  margin-bottom: 15px;
-}
-
-.publication .view-publication {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: var(--card-background);
-  border: 1px solid var(--border-color);
-  border-radius: 4px;
-  color: var(--text-color);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.publication .view-publication:hover {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-  transform: translateY(-2px);
-}
-
-.loading, .error, .no-publications {
-  text-align: center;
-  padding: 40px;
-  font-size: 1.2em;
-  color: var(--text-color);
-}
-
-.error {
-  color: #ff6b6b;
-}
-
-/* Sorting controls styles */
-.sort-controls {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.sort-controls button {
-  background-color: var(--card-background);
-  color: var(--text-color);
-  border: 1px solid var(--border-color);
-  padding: 8px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(5px);
-}
-
-.sort-controls button:hover,
-.sort-controls button.active {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
-}
-
-/* Enhance accessibility */
-.publication a:focus,
-.sort-controls button:focus {
-  outline: 2px solid var(--accent-color);
-  outline-offset: 2px;
-}
-
-/* Responsive design */
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav ul li {
-    margin: 10px 0;
-  }
-  
-  .sort-controls {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .sort-controls button {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-
-  .publication h3 {
-    font-size: 1.2em;
-  }
-}
-
-/* Social Links Styles */
-.social-links a {
-    color: var(--text-color);
-    text-decoration: none;
-    margin-right: 20px;
-    transition: opacity 0.3s ease;
-}
-
-.social-links a:hover {
-    opacity: 0.8;
-}
-
-/* Publications styles updates */
-.publication.card {
-    margin-bottom: 15px; /* 减小卡片之间的间距 */
-    padding: 15px; /* 减小卡片内部的内边距 */
-}
-
-.publication h3 {
-    font-size: 1.2em;
-    margin-bottom: 8px;
-}
-
-.publication p {
-    margin-bottom: 5px;
-}
-
-.publication .authors,
-.publication .venue-year,
-.publication .citations {
-    font-size: 0.9em;
-}
+\`\`\`
 
