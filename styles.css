@@ -274,3 +274,24 @@ footer {
     opacity: 0.8;
 }
 
+/* Publications styles updates */
+.publication.card {
+    margin-bottom: 15px; /* 减小卡片之间的间距 */
+    padding: 15px; /* 减小卡片内部的内边距 */
+}
+
+.publication h3 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+
+.publication p {
+    margin-bottom: 5px;
+}
+
+.publication .authors,
+.publication .venue-year,
+.publication .citations {
+    font-size: 0.9em;
+}
+
